@@ -1,0 +1,102 @@
+{% load static %}
+<nav>
+
+  <h1>🐾ThePawfund</h1>
+   <ul>
+      <li><a href="{% url 'home' %}">| Home |</a></li>
+      <li><a href="{% url 'dogs' %}">Adopt | </a></li>
+   </ul>
+</nav>
+
+<div class="img-box">
+   <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*d1BuXFm7W0wyQhqUJ6KMxA.jpeg" width="100%" height="90%">
+
+
+   <h1 class="top-left-text">Pouring Love into the voiceless!</h1>
+
+   <div class="btn-box">
+       <button class="two" type="submit"><a href="{% url 'dogs' %}" >Feed a stray, save a life</a></button>
+    </div>
+</div>
+<h2 class="about">About Us</h2>
+<hr>
+<P class="first">ThePawfund was launched by two dog enthusiasts, Dr. Saranya and  Mr. R.Parthiban.</P>
+<p>The web-site is a direct result of their great interest in dogs and the need to compile a large database of dog owners, breeders, veterinarians, dog trainers, animal welfare organisations and all those offering dog related services in India.</p>
+<p>This web site is run with the welfare of the Canine world in mind.</p>
+<p>All business enquiries maybe be addressed to</p>
+<h4>Dr. Saranya<br>
+📍22, N.T.Road, T.Nagar, Chennai-600017<br>
+📞Ph: 0-9574903218<br>
+📧E-mail:priyapaw435@gmail.com</h4>
+<hr>
+
+<style>
+.about{
+    color:blue;
+    margin-top:40px;
+    }
+.first{
+    margin-top:50px;
+}
+nav{
+   background-color:darkcyan;
+   color:white;
+   padding:15px;
+}
+
+ul, li, h1{
+    display:inline;
+}
+ul{
+    margin-left:60%;
+    cursor:pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+img{
+    margin-top:0px;
+}
+
+.img-box{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.top-left-text{
+    position: absolute;
+    margin-top: 10px;           
+    left: 20px;        
+    color: rgb(30,70,170);
+    font-size: 42px;
+    font-weight: bold;
+    text-shadow: 2px 3px 5px white;  
+}
+
+.btn-box{
+    position: absolute;
+    top: 50%;           
+    right: 40px;         
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;          
+}
+
+.two{
+    background-color: darkcyan;
+    color: white;
+    padding: 20px;
+    width: 250px;
+    border: none;
+    border-radius: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+</style>

@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dogs</title>
+
+
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+
+    <style>
+
+        nav{
+            background-color: darkcyan;
+            color: white;
+            padding: 15px;
+        }
+        ul, li, h1{
+            display: inline;
+        }
+        ul{
+            margin-left: 60%;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        li:hover{
+            color: violet;
+        }
+
+
+        .header{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #donate-button{
+            padding: 15px 25px;
+            border-radius: 5px;
+            background-color: cadetblue;
+            font-size:1rem;
+            cursor: pointer;
+        }
+        .list{
+            text-align: center;
+        }
+        .dog{
+            border-color:black;
+            border-width:2px;
+            border-style:solid;
+            display:inline-block;
+            width:350px;
+            margin: 50px;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .dog:hover{
+            background-color:black;
+            color:white;
+        }
+
+        .dog img{
+            width: 100%;
+            height: 300px;
+        }
+        .message{
+            color: green;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        input[type="number"]{
+            padding: 10px;
+            font-size: 1rem;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>🐾ThePawfund</h1>
+    <ul>
+        <li><a href="{% url 'home' %}">| Home |</a></li>
+        <li><a href="{% url 'dogs' %}">Donate |</a></li>
+    </ul>
+</nav>
+
+<div class="header">
+    <h1>Dogs</h1>
+    <form method="POST" action="{% url 'donate' %}">
+        {% csrf_token %}
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+        <input type="number" name="amount" placeholder="Enter amount" required>
+        <button type="submit" id="donate-button"><b>Donate</b></button>
+    </form>
+</div>
+
+
+<div class="list">
+
+    <div class="dog">
+        <img src="https://breed-assets.wisdompanel.com/dog/street-dog-india/Indian_Street_Dog2.jpg" alt="Kaveri">
+        <h2>Dog – Kaveri</h2>
+        <p>Meet Kaveri, a sweet soul with a heart full of love and a tail that wags with the rhythm of joy. At the tender age of 3, Kaveri is not just a dog; she’s a testament to a lifetime of loyalty, warmth, and unwavering companionship.</p>
+        <form method="POST" action="{% url 'adopt' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dog_name" value="Kaveri">  
+        <input type="text" name="adopter_name" placeholder="Enter your name" required>
+        <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+    </form>
+
+    </div>
+
+    <div class="dog">
+        <img src="https://cdn.shopify.com/s/files/1/0558/8497/2240/files/Indian_Pariah_Dog_480x480.jpg?v=1625120415" alt="Oscar">
+        <h2>Dog – Oscar</h2>
+        <p>This captivating intense face belongs to Oscar, aged 4 years. Oscar loves his space and company of other senior folks. This handsome Indian breed is looking to be passively adopted.</p>
+        <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Oscar">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+
+    </div>
+
+    <div class="dog">
+        <img src="https://images.saymedia-content.com/.image/ar_4:3,c_fill,cs_srgb,q_auto:eco,w_1200/MTkwNDM0MzQzOTQ3MjE2MTIx/rajapalayam-dog-breed-information-facts-and-characteristics.png" alt="Tiger">
+        <h2>Dog – Tiger</h2>
+        <p>An 11-year-old canine hero who has faced life’s challenges with unmatched courage. Rescued by a compassionate animal lover, Tiger found himself in a geriatric center, battling mobility issues, renal complications, and a heart that still beats strong</p>
+         <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Tiger">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+ </div>
+  <div class="dog" >
+    <img src="https://breed-assets.wisdompanel.com/dog/street-dog-india/Indian_Street_Dog3.jpg" width="350px" height="300px">
+    <h2>Dog – Circle</h2>
+    <p>Circle was abused & attacked curelly by a group of street dog haters several times. This led to severe trauma to her limbs & since then she has been unable to use her hind leg limbs.</p>
+     <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Circle">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+
+</div>
+ <div class="dog" >
+    <img src="https://www.shutterstock.com/image-photo/lonely-cute-brown-puppy-sitting-600nw-2239428987.jpg" width="350px" height="300px">
+    <h2>Dog – Bruno</h2>
+    <p>Bruno is a playful 2-year-old who loves running, eating biscuits, and wagging his tail at everyone. He is friendly with children and loves attention.</p>
+     <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Bruno">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+
+</div>
+    <div class="dog" >
+    <img src="https://adopt-a-pet.in/media/styles/crop_thumbnail/public/s3/node/pets/2023-09/Pepper%2C.jpeg?VersionId=Hr3D.AZisJlljQrRFPRSlKEvColeIKVY&h=68e3e014&itok=kRdR_q7z" width="350px" height="300px">
+    <h2>Dog – Choco</h2>
+    <p>Choco is a 1-year-old Beagle with endless curiosity. He loves sniffing everything, exploring places, and playing with toys all day long.</p>
+     <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Choco">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+
+</div>
+     <div class="dog" >
+    <img src="https://i.pinimg.com/736x/17/49/60/1749607a21fde2adbf511333f5d3c12e.jpg" width="350px" height="300px">
+    <h2>Dog – Daisy</h2>
+    <p>Daisy is a gentle 3-year-old dog rescued from the streets. She loves warm cuddles, soft blankets, and quiet evenings. Very calm and loving.</p>
+     <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Daisy">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+
+</div>
+    <div class="dog" >
+    <img src="https://images.pexels.com/photos/30400590/pexels-photo-30400590.jpeg?cs=srgb&dl=pexels-nitish-kumar-680831702-30400590.jpg&fm=jpg" width="350px" height="300px">
+    <h2>Dog – Bella</h2>
+    <p>Bella is a sweet 8-year-old dog rescued recently. She loves learning new tricks, follows commands quickly, and enjoys belly rubs.</p>
+     <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Bella">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+
+</div>
+    <div class="dog" >
+    <img src="https://images.hindustantimes.com/img/2022/09/07/550x309/ashwini-chaudhary-monty-fSGSAaxzXfM-unsplash_1662535327381_1662535398649_1662535398649.jpg" width="350px" height="300px">
+    <h2>Dog – Ruby</h2>
+    <p>Ruby is a calm 6-year-old female who loves slow walks and relaxing under shade. She is gentle, friendly, and perfect for elderly adopters.</p>
+     <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Ruby">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+
+</div>
+    <div class="dog" >
+    <img src="https://i.ytimg.com/vi/mneZqvlvrQU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB-ChaJnyo9yTDDF_E7v84aasNOog" width="350px" height="300px">
+    <h2>Dog – Max</h2>
+    <p>Max is a cheerful 1-year-old dog. He is extremely loyal, gentle, and affectionate. Max loves fetching balls and making new friends.</p>
+     <form method="POST" action="{% url 'adopt' %}">
+   {% csrf_token %}
+   <input type="hidden" name="dog_name" value="Max">  
+   <input type="text" name="adopter_name" placeholder="Enter your name" required>
+   <button type="submit" id="donate-button" style="background-color:#2a9d8f;">Adopt 🐾</button>
+</form>
+
+</div>
+</div>
+

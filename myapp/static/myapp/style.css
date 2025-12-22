@@ -1,0 +1,32 @@
+li:hover{
+    color:violet;
+}
+.header{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dog{
+    border-color:black;
+    border-width:2px;
+    border-style:solid;
+    display:inline-block;
+    width:350px;
+    margin-top:50px;
+    margin: 100px;
+}
+.dog:hover{
+    background-color:black;
+    color:white;
+}
+#donate-button{
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color:cadetblue;
+    font-size:1rem;
+
+}
+.list{
+    text-align:center;
+}
