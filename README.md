@@ -17,7 +17,7 @@ GitHub-ready project
 
 Python
 
-Django / Flask 
+Django 
 
 HTML, CSS 
 
@@ -38,4 +38,5 @@ Priya
 
 
  
+
 
